@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests{
-    use crate::sum_multiples;
+    use super::*;
 
     #[test]
     fn test_sum_multiples()
