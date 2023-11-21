@@ -55,10 +55,10 @@ fn main() {
     let mut max_file_num: u64 = 0;
     for f in glob(glob_expression.to_str().unwrap()).expect("Failed to read glob pattern")
     {
-        // println!("File: {:?}", f.unwrap());
+        // println!("File: {:?}", f.as_ref().unwrap());
         // println!("{:?}", f.unwrap().file_name().unwrap().to_str().unwrap().parse::<i32>());
         let Ok(file_num) = f.unwrap().file_name().unwrap().to_str().unwrap().parse::<u64>() else{continue;};
-        if file_num > max_file_num{
+        if file_num >= max_file_num{
             max_file_num = file_num + 1;
         }
     }
